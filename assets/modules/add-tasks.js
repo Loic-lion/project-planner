@@ -1,4 +1,4 @@
-///////AJOUT DES TACHES + SAVE DANS LE LOCAL STORAGE//////
+///////////////AJOUT DES TACHES//////////////
 export function nouvelleTache() {
   const inputName = document.getElementById("searchbar_name");
   const inputTasks = document.getElementById("searchbar_task");
@@ -27,7 +27,8 @@ export function nouvelleTache() {
   const newTask = document.createElement("li");
   newTask.innerHTML = ` <span>${inputNameDone}</span> 
     <span>${inputTaskDone}</span> 
-    <span>${inputDateDone}</span> 
+    <span> Date limite: <span class="date_limite">${inputDateDone}</span> </span> 
+    <span> Deadline: <span class="deadline"></span></span>
     <div class="container_list_checkbox"> 
     <input type="radio" name="${inputNameDone} value="done" />Done
     <input type="radio" name="${inputNameDone} value="doing" />Doing
@@ -35,7 +36,18 @@ export function nouvelleTache() {
     </div> `;
 
   list.appendChild(newTask);
+  ///////////////////////////////DEADLINE///////////////////////////////
+  const dateLimiteSpan = document.querySelector(".date_limite");
+  const deadlineSpan = document.querySelector(".deadline");
 
+  const dateLimite = new Date(dateLimiteSpan.textContent);
+  const dateNow = new Date();
+  const diffTime = Math.abs(dateLimite - dateNow);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+  deadlineSpan.textContent = `${diffDays} jour(s) restant(s)`;
+
+  /////////////////LOCAL STORAGE + RESET SEARCHBARS//////////
   const tasks = list.innerHTML;
   localStorage.setItem("tasks", tasks);
   inputName.value = "";
