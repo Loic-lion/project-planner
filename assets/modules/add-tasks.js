@@ -36,18 +36,18 @@ export function nouvelleTache() {
     </div> `;
 
   list.appendChild(newTask);
-  ///////////////////////////////DEADLINE///////////////////////////////
-  const dateLimiteSpan = document.querySelector(".date_limite");
-  const deadlineSpan = document.querySelector(".deadline");
+  /////////////////////////////DEADLINE///////////////////////////////
+  // const dateLimiteSpan = document.querySelector(".date_limite");
+  // const deadlineSpan = document.querySelector(".deadline");
 
-  const dateLimite = new Date(dateLimiteSpan.textContent);
-  const dateNow = new Date();
-  const diffTime = Math.abs(dateLimite - dateNow);
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  // const dateLimite = new Date(dateLimiteSpan.textContent);
+  // const dateNow = new Date();
+  // const diffTime = Math.abs(dateLimite - dateNow);
+  // const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-  deadlineSpan.textContent = `${diffDays} jour(s) restant(s)`;
+  // deadlineSpan.textContent = `${diffDays} jour(s) restant(s)`;
 
-  /////////////////LOCAL STORAGE + RESET SEARCHBARS//////////
+  ///////////////LOCAL STORAGE + RESET SEARCHBARS//////////
   const tasks = list.innerHTML;
   localStorage.setItem("tasks", tasks);
   inputName.value = "";
