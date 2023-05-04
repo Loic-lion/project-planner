@@ -4,7 +4,6 @@ export function nouvelleTache() {
   const inputTasks = document.getElementById("searchbar_task");
   const inputDate = document.getElementById("searchbar_date");
   const list = document.getElementById("container_list");
-
   const inputTaskDone = inputName.value;
   const inputNameDone = inputTasks.value;
   const inputDateDone = inputDate.value;
@@ -41,4 +40,13 @@ export function nouvelleTache() {
   inputName.value = "";
   inputDate.value = "";
   inputTasks.value = "";
+
+  // timeRemainer();
 }
+// function timeRemainer() {
+//   const inputDate = document.getElementById("searchbar_date");
+//   const inputDateDone = inputDate.value;
+//   const remainTime = inputDateDone - Date.now;
+//   const daysLeft = Math.ceil(remainTime / (1000 * 3600 * 24));
+//   console.log(daysLeft);  
+// }
