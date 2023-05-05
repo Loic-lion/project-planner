@@ -1,4 +1,6 @@
-///////AJOUT DES TACHES + SAVE DANS LE LOCAL STORAGE//////
+import { addTaskToArrays } from "./handleTasks.js";
+import { updateTask } from "./handleTasks.js";
+///////////////AJOUT DES TACHES//////////////
 export function nouvelleTache() {
   const inputName = document.getElementById("searchbar_name");
   const inputTasks = document.getElementById("searchbar_task");
@@ -22,27 +24,39 @@ export function nouvelleTache() {
     alert("Entrez une date pour créer une nouvelle tâche");
     return false;
   }
+  
+  addTaskToArrays({
+    name:inputName.value,
+    inputTasks:inputTasks.value,
+    date:inputDate.value
+  })
+
 
   const newTask = document.createElement("li");
   newTask.innerHTML = ` <span>${inputNameDone}</span> 
     <span>${inputTaskDone}</span> 
-    <span>${inputDateDone}</span> 
+    <span> Date limite: <span class="date_limite">${inputDateDone}</span> </span> 
+    <span> Deadline: <span class="deadline"></span></span>
     <div class="container_list_checkbox"> 
     <input type="radio" name="${inputNameDone} value="done" />Done
     <input type="radio" name="${inputNameDone} value="doing" />Doing
     <input type="radio" name="${inputNameDone} value="todo" checked/>To do
     </div> `;
-
+  newTask.setAttribute("id", "content_list");
   list.appendChild(newTask);
+  
+  
 
-  const tasks = list.innerHTML;
-  localStorage.setItem("tasks", tasks);
+  /////////////////LOCAL STORAGE + RESET SEARCHBARS//////////
+  // const tasks = list.innerHTML;
+  // localStorage.setItem("tasks", tasks);
   inputName.value = "";
   inputDate.value = "";
   inputTasks.value = "";
 
   // timeRemainer();
 }
+updateTask();
 // function timeRemainer() {
 //   const inputDate = document.getElementById("searchbar_date");
 //   const inputDateDone = inputDate.value;
