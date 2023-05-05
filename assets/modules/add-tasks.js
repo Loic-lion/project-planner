@@ -1,4 +1,9 @@
-import { updateLocalStorage, addTaskToArrays } from "./stock.js";
+import { display } from "./display.js";
+import {
+  updateLocalStorage,
+  addTaskToArrays,
+  getLocalStorage,
+} from "./stock.js";
 
 export function nouvelleTache() {
   const inputName = document.getElementById("searchbar_name");
@@ -25,24 +30,30 @@ export function nouvelleTache() {
     return false;
   }
 
-  const newTask = document.createElement("li");
-  newTask.innerHTML = ` <span>${inputNameDone}</span> 
-  <span>${inputTaskDone}</span> 
-  <span> Date limite: <span class="date_limite">${inputDateDone}</span> </span> 
-  <span> Deadline: <span class="deadline"></span></span>
-  <div>
-  <button class= "done" >Done</button>
-  <button class= "doing" >Doing</button>
-  <button class= "todo" >To Do</button>
-  </div> `;
+  // const newTask = document.createElement("li");
+  // newTask.innerHTML = ` <span>${inputNameDone}</span>
+  // <span>${inputTaskDone}</span>
+  // <span> Date limite: <span class="date_limite">${inputDateDone}</span> </span>
+  // <span> Deadline: <span class="deadline"></span></span>
+  // <div>
+  // <button class= "done" >Done</button>
+  // <button class= "doing" >Doing</button>
+  // <button class= "todo" >To Do</button>
+  // <button class= "delete" > Delete </button>
+  // </div> `;
 
-  list.appendChild(newTask);
+  // list.appendChild(newTask);
 
-  // Mise à jour du tableau des tâches dans localStorage
-  addTaskToArrays(newTask);
-  updateLocalStorage();
+  let task = {
+    name: inputNameDone,
+    inputTasks: inputTaskDone,
+    date: inputDateDone,
+  };
+  addTaskToArrays(task);
+  updateLocalStorage(getLocalStorage());
 
   inputName.value = "";
   inputDate.value = "";
   inputTasks.value = "";
+  display();
 }

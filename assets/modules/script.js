@@ -1,6 +1,7 @@
 import { nouvelleTache } from "./add-tasks.js";
 import { initDeadlines } from "./deadline.js";
-
+import { display } from "./display.js";
+import { getLocalStorage } from "./stock.js";
 ////////////////////////////////////////
 
 const boutonAd = document.getElementById("input_add");
@@ -16,6 +17,7 @@ window.onload = () => {
   initDeadlines();
 };
 
+display();
 ////////////////////Empecher le reset du submit///////////
 
 form.addEventListener("submit", function (event) {
@@ -23,12 +25,12 @@ form.addEventListener("submit", function (event) {
 });
 //////////////////////Local Storage////////////////////
 
-window.addEventListener("load", () => {
-  const list = document.getElementById("container_list");
-  const tasks = localStorage.getItem("tasks");
-  if (tasks) {
-    list.innerHTML = tasks;
-  }
-});
+// window.addEventListener("load", () => {
+//   const list = document.getElementById("container_list");
+//   const tasks = localStorage.getItem("tasks");
+//   if (tasks) {
+//     list.innerHTML = tasks;
+//   }
+// });
 
 // localStorage.clear();
