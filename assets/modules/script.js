@@ -2,6 +2,7 @@ import { nouvelleTache } from "./add-tasks.js";
 import { initDeadlines } from "./deadline.js";
 import { display } from "./display.js";
 import { getLocalStorage } from "./stock.js";
+import { statut } from "./statut.js";
 ////////////////////////////////////////
 
 const boutonAd = document.getElementById("input_add");
@@ -18,6 +19,7 @@ window.onload = () => {
 };
 
 display();
+statut();
 ////////////////////Empecher le reset du submit///////////
 
 form.addEventListener("submit", function (event) {
