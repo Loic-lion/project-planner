@@ -6,7 +6,7 @@ export function display() {
   const list = document.getElementById("container_list");
   list.innerHTML = "";
 
-  let arrayTasks = JSON.parse(localStorage.getItem("tasks"));
+  let arrayTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
   console.log(arrayTasks);
 
   arrayTasks.forEach((task) => {

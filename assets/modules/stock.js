@@ -17,6 +17,6 @@ export function updateLocalStorage(arrayTasks) {
 }
 
 export function getLocalStorage() {
-  let arrayTasks = JSON.parse(localStorage.getItem("tasks"));
+  let arrayTasks = JSON.parse(localStorage.getItem("tasks")) || [] ;
   return arrayTasks;
 }
