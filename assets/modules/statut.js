@@ -1,5 +1,7 @@
+import { updateStatusTaskFromArray } from "./stock.js";
+
 export function statut() {
-  let allButtons = document.querySelectorAll(".doing, .todo, .done");
+  let allButtons = document.querySelectorAll(".doing-button, .todo-button, .done-button");
   let containerDoing = document.getElementById("container_doing");
   let containerDone = document.getElementById("container_done");
   let containerTodo = document.getElementById("container_list");
@@ -22,6 +24,8 @@ export function statut() {
         li.classList.add("done");
         containerDone.appendChild(li);
       }
+      const id = li.getElementsByTagName("span")[0].innerHTML;
+      updateStatusTaskFromArray(id, target.className);
       // const tasks = list.innerHTML;
       // localStorage.setItem("tasks", tasks);
     });

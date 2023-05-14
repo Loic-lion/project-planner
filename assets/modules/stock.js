@@ -5,18 +5,40 @@ export function addTaskToArrays(task) {
   localStorage.setItem("tasks", JSON.stringify(arrayTasks));
   return arrayTasks;
 }
-export function deleteTask() {
-  // TASK_ARRAY.find(task)
-  updateLocalStorage();
+
+export function deleteTask(id) {
+  let index = -1;
+  let arrayTasks = getLocalStorage();
+  arrayTasks.forEach((storageTask) => {
+    if (storageTask.id == id) {
+      index = arrayTasks.indexOf(storageTask);
+    }
+  });
+  if (index !== -1) {
+    arrayTasks.splice(index, 1);
+  }
+  updateLocalStorage(arrayTasks);
 }
+
 export function updateTask() {
   updateLocalStorage();
 }
+
 export function updateLocalStorage(arrayTasks) {
   localStorage.setItem("tasks", JSON.stringify(arrayTasks));
 }
 
 export function getLocalStorage() {
-  let arrayTasks = JSON.parse(localStorage.getItem("tasks")) || [] ;
+  let arrayTasks = JSON.parse(localStorage.getItem("tasks")) || [];
   return arrayTasks;
+}
+
+export function updateStatusTaskFromArray(id, status) {
+  let arrayTasks = getLocalStorage();
+  arrayTasks.forEach((storageTask) => {
+    if (storageTask.id == id) {
+      storageTask.status = status;
+    }
+  });
+  updateLocalStorage(arrayTasks);
 }

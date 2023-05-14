@@ -45,9 +45,11 @@ export function nouvelleTache() {
   // list.appendChild(newTask);
 
   let task = {
+    id: Date.now(),
     name: inputNameDone,
     inputTasks: inputTaskDone,
     date: inputDateDone,
+    status: "todo",
   };
   addTaskToArrays(task);
   updateLocalStorage(getLocalStorage());
