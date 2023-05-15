@@ -5,11 +5,13 @@ import { display } from "./display.js";
 import { status } from "./statut.js";
 import { deleteTache } from "./delete.js";
 import { triAlphabetique } from "./tri-alphabetique.js";
+import { triDeadline } from "./tri-deadline.js";
 ////////////////////////////////////////
 
 const boutonAd = document.getElementById("input_add");
 const form = document.querySelector("form");
-const boutonTri = document.getElementById("button_noms");
+const boutonTriAlpha = document.getElementById("button_noms");
+const boutonTriDeadline = document.getElementById("button_temps");
 
 //////////////////Création des tâches////////////
 
@@ -25,7 +27,10 @@ display();
 status();
 deleteTache();
 //////////////////////TRI ALPHABETIQUE///////////
-boutonTri.addEventListener("click", triAlphabetique);
+boutonTriAlpha.addEventListener("click", triAlphabetique);
+
+////////////////////////TRI DEADLINE/////////////////////
+boutonTriDeadline.addEventListener("click", triDeadline);
 ////////////////////Empecher le reset du submit///////////
 
 form.addEventListener("submit", function (event) {

@@ -11,8 +11,8 @@ export function nouvelleTache() {
   const inputDate = document.getElementById("searchbar_date");
   // const list = document.getElementById("container_list");
 
-  const inputTaskDone = inputName.value;
-  const inputNameDone = inputTasks.value;
+  const inputTaskDone = inputTasks.value;
+  const inputNameDone = inputName.value;
   const inputDateDone = inputDate.value;
 
   if (inputTaskDone.trim() == "") {
