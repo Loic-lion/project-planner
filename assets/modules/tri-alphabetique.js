@@ -29,7 +29,7 @@ export function triAlphabetique() {
           <span>${task.inputTasks}</span> 
           <span> Date limite: <span class="date_limite">${task.date}</span> </span> 
           <span> Deadline: <span class="deadline"></span></span>
-          <div>
+          <div class="container_button">
             <button class="done-button">Done</button>
             <button class="doing-button">Doing</button>
             <button class="todo-button">To Do</button>
