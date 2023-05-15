@@ -31,11 +31,11 @@ export function nouvelleTache() {
   }
 
   let task = {
-    id: Date.now(),
     name: inputNameDone,
     inputTasks: inputTaskDone,
     date: inputDateDone,
     status: "todo-button",
+    id: Date.now(),
   };
   addTaskToArrays(task);
   updateLocalStorage(getLocalStorage());

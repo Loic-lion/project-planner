@@ -19,7 +19,7 @@ export function display() {
     newTask.classList.add(task.status);
     console.log(task);
     newTask.innerHTML = `
-        <span>${task.id}</span>
+        <span class ="hidden">${task.id}</span>
         <span>${task.name}</span> 
         <span>${task.inputTasks}</span> 
         <span> Date limite: <span class="date_limite">${task.date}</span> </span> 
