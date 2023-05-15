@@ -4,30 +4,49 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" defer src="./assets/modules js/script.js"></script>
+    <script type="module" defer src="./assets/modules/script.js"></script>
     <link rel="stylesheet" href="./assets/scss/css/main.css" />
-    <title>Planner</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+    </style>
+    <title>Project-Planner</title>
   </head>
   <body>
     <header>
       <h1>Project Planner</h1>
-      <div class="input">
-        <input type="text" placeholder="Nom de la tâche" />
-        <input type="text" placeholder="Description de la tâche" />
-        <input type="date" />
-      </div>
+      <form class="input">
+        <input id="searchbar_name" type="text" placeholder="Nom de la tâche" />
+        <input
+          id="searchbar_task"
+          type="text"
+          placeholder="Description de la tâche"
+        />
+        <input id="searchbar_date" type="date" />
+        <button type="submit" id="input_add">Ajouter</button>
+      </form>
 
       <nav class="filter">
-        <button class="bouton_triage" id="button_temps">Temps restant</button>
-        <button class="bouton_triage" id="button_urgent">Urgent</button>
-        <button class="bouton_triage" id="button_noms">Par noms</button>
-        <button class="bouton_triage" id="button_todo">filtrer to do</button>
-        <button class="bouton_triage" id="button_doing">filtrer doing</button>
-        <button class="bouton_triage" id="button_done">filtrer done</button>
+        <button class="bouton_triage" id="button_temps">Temps restant</button>  
+        <button class="bouton_triage" id="button_noms">
+          Ordre alphabetique
+        </button>
       </nav>
     </header>
     <main>
-      <section class="container"></section>
+      <section class="container">
+        <div class="container_div">
+          <h2>To Do</h2>
+          <ul id="container_list"></ul>
+        </div>
+        <div class="container_div">
+          <h2>Doing</h2>
+          <ul id="container_doing"></ul>
+        </div>
+        <div class="container_div">
+          <h2>Done</h2>
+          <ul id="container_done"></ul>
+        </div>
+      </section>
     </main>
   </body>
 </html>
