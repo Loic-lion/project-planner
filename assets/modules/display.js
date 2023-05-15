@@ -32,11 +32,11 @@ export function display() {
         </div>
       `;
 
-    if (task.status == "todo") {
+    if (task.status == "todo-button") {
       list.appendChild(newTask);
-    } else if (task.status == "doing") {
+    } else if (task.status == "doing-button") {
       listDoing.appendChild(newTask);
-    } else if (task.status == "done") {
+    } else if (task.status == "done-button") {
       listDone.appendChild(newTask);
     }
     console.log(list);

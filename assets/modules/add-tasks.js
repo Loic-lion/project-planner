@@ -9,7 +9,7 @@ export function nouvelleTache() {
   const inputName = document.getElementById("searchbar_name");
   const inputTasks = document.getElementById("searchbar_task");
   const inputDate = document.getElementById("searchbar_date");
-  const list = document.getElementById("container_list");
+  // const list = document.getElementById("container_list");
 
   const inputTaskDone = inputName.value;
   const inputNameDone = inputTasks.value;
@@ -30,26 +30,12 @@ export function nouvelleTache() {
     return false;
   }
 
-  // const newTask = document.createElement("li");
-  // newTask.innerHTML = ` <span>${inputNameDone}</span>
-  // <span>${inputTaskDone}</span>
-  // <span> Date limite: <span class="date_limite">${inputDateDone}</span> </span>
-  // <span> Deadline: <span class="deadline"></span></span>
-  // <div>
-  // <button class= "done" >Done</button>
-  // <button class= "doing" >Doing</button>
-  // <button class= "todo" >To Do</button>
-  // <button class= "delete" > Delete </button>
-  // </div> `;
-
-  // list.appendChild(newTask);
-
   let task = {
     id: Date.now(),
     name: inputNameDone,
     inputTasks: inputTaskDone,
     date: inputDateDone,
-    status: "todo",
+    status: "todo-button",
   };
   addTaskToArrays(task);
   updateLocalStorage(getLocalStorage());

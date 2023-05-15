@@ -2,7 +2,7 @@ import { nouvelleTache } from "./add-tasks.js";
 import { initDeadlines } from "./deadline.js";
 import { display } from "./display.js";
 import { getLocalStorage } from "./stock.js";
-import { statut } from "./statut.js";
+import { status } from "./statut.js";
 import { deleteTache } from "./delete.js";
 ////////////////////////////////////////
 
@@ -20,7 +20,7 @@ window.onload = () => {
 };
 
 display();
-statut();
+status();
 deleteTache();
 ////////////////////Empecher le reset du submit///////////
 

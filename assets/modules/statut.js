@@ -1,7 +1,9 @@
 import { updateStatusTaskFromArray } from "./stock.js";
 
-export function statut() {
-  let allButtons = document.querySelectorAll(".doing-button, .todo-button, .done-button");
+export function status() {
+  let allButtons = document.querySelectorAll(
+    ".doing-button, .todo-button, .done-button"
+  );
   let containerDoing = document.getElementById("container_doing");
   let containerDone = document.getElementById("container_done");
   let containerTodo = document.getElementById("container_list");
@@ -12,22 +14,20 @@ export function statut() {
       const target = event.target;
       const li = target.closest("li");
 
-      if (target.matches(".todo")) {
+      if (target.matches(".todo-button")) {
         li.classList.remove("doing", "done");
         containerTodo.appendChild(li);
-      } else if (target.matches(".doing")) {
+      } else if (target.matches(".doing-button")) {
         li.classList.remove("done");
         li.classList.add("doing");
         containerDoing.appendChild(li);
-      } else if (target.matches(".done")) {
+      } else if (target.matches(".done-button")) {
         li.classList.remove("doing");
         li.classList.add("done");
         containerDone.appendChild(li);
       }
       const id = li.getElementsByTagName("span")[0].innerHTML;
       updateStatusTaskFromArray(id, target.className);
-      // const tasks = list.innerHTML;
-      // localStorage.setItem("tasks", tasks);
     });
   });
 }
