@@ -2,7 +2,6 @@ import { nouvelleTache } from "./add-tasks.js";
 import { initDeadlines } from "./deadline.js";
 import { display } from "./display.js";
 // import { getLocalStorage } from "./stock.js";
-import { status } from "./statut.js";
 import { deleteTache } from "./delete.js";
 import { triAlphabetique } from "./tri-alphabetique.js";
 import { triDeadline } from "./tri-deadline.js";
@@ -24,7 +23,6 @@ window.onload = () => {
 };
 
 display();
-status();
 deleteTache();
 //////////////////////TRI ALPHABETIQUE///////////
 boutonTriAlpha.addEventListener("click", triAlphabetique);
